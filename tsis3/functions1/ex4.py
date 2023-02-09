@@ -1,16 +1,16 @@
-def filter_prime(numbers):
-    def is_prime(n):
-        if n <= 1:
+def filter_prime(list):
+    def is_prime(k):
+        if k <= 1:
             return False
-        for i in range(2, int(n**0.5) + 1):
-            if n % i == 0:
+        for i in range(2, int(k**0.5) + 1):
+            if k % i == 0:
                 return False
         return True
 
     primes=[]
-    for x in range(len(numbers)):
-        if is_prime(numbers[x]):
-            primes.append(numbers[x])
+    for j in range(len(list)):
+        if is_prime(list[j]):
+            primes.append(list[j])
     return primes
-numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-print(filter_prime(numbers))
+list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(filter_prime(list))
