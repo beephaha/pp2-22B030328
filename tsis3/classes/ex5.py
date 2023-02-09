@@ -4,7 +4,7 @@ class account:
         self.balance = balance
     def deposit(self, dep):
         self.balance += dep
-        print("accepted")
+        return "accepted"
     def withdraw(self, withdraw):
         if withdraw > self.balance:
             print("request exceeds the current balance")
