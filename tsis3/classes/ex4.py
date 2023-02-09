@@ -17,8 +17,8 @@ class point():
         dx = point.x - self.x
         dy = point.y - self.y
         return math.sqrt(dx ** 2 + dy ** 2)
-pt1 = point(2, 3)
-pt2 = point(4, 6)
-print(pt1.dist(pt2))
-print(pt1.show())
-print(pt2.show())    
+pointt1 = point(2, 3)
+pointt2 = point(4, 6)
+print(pointt1.dist(pointt2))
+print(pointt1.show())
+print(pointt2.move(3, 4))    
