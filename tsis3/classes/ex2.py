@@ -13,7 +13,6 @@ class Square(Shape):
     def area(self):
         return self.length*self.length
 
-Asqr = Square(5)
-print(Asqr.area())      # prints 25 as given argument
+sq = Square(5)
+print(sq.area())      
 
-print(Square().area())
