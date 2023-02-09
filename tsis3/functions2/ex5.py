@@ -1,6 +1,11 @@
-def high_score(movie):
-    return movie["imdb"] > 5.5
-
+def filter (movies, category):
+    result = 0
+    divisor = 0
+    for film in movies:
+        if film["category"] == category:
+            result += film["imdb"]
+            divisor += 1
+    return result/divisor
 
 movies = [
 {
@@ -79,4 +84,4 @@ movies = [
 "category": "Romance"
 }
 ]
-print(high_score(movies))
+print(filter(movies, "Romance"))

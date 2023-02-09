@@ -1,7 +1,9 @@
-def high_score(movie):
-    return movie["imdb"] > 5.5
-
-
+def tops(movies):
+    result = []
+    for film in movies:
+        if film["imdb"] > 5.5:
+            result.append(film)
+    return result
 movies = [
 {
 "name": "Usual Suspects", 
@@ -79,4 +81,4 @@ movies = [
 "category": "Romance"
 }
 ]
-print(high_score(movies))
+print(tops(movies))
