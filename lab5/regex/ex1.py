@@ -3,7 +3,7 @@ import re
 string = input()
 shablon = r"a(b*)"
 
-if re.match(shablon, string):
+if re.search(shablon, string):
     print("FOUND!")
 else:
     print("NOT FOUND!")
