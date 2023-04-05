@@ -112,7 +112,6 @@ while True:
             level+=1
             snake_speed+=2
             #speed+=10
-    elif 
     else:
         snake_body.pop()
          

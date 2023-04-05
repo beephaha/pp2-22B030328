@@ -17,10 +17,10 @@ rect_flag = False
 circle_flag = False
 width_line = 2
 
-eraser = pygame.image.load("eraser.png")
+eraser = pygame.image.load("lab8\paint\eraser.png")
 eraser = pygame.transform.scale(eraser, (75, 75))
 
-pygame.display.set_caption('TiSoft paint')
+pygame.display.set_caption('paint')
 
 while check:
     sc.blit(eraser, (350, 510))
