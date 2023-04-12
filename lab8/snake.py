@@ -8,7 +8,7 @@ def terminate():
     pygame.quit()
     sys.exit()
 
-snake_speed = 30
+snake_speed = 20
 speed = 10
 WIDTH = 720
 HEIGHT = 480
@@ -37,6 +37,8 @@ fruit_spawn = True #default food spawning
 #default snake direction
 direction = 'RIGHT'
 change_to = direction
+
+food_timer = 0
 
 level = 1
 score = 0
@@ -99,31 +101,38 @@ while True:
         snake_position[0] -= speed
     if direction == 'RIGHT':
         snake_position[0] += speed
-
+    
     food_timer += 1
+
+
+
  
     #collision while eating fruit
     snake_body.insert(0, list(snake_position))
     if snake_position[0] == fruit_position[0] and snake_position[1] == fruit_position[1]:
         score += 10
         fruit_spawn = False
-        food_timer = 0
         if score%30==0:
             level+=1
             snake_speed+=2
             #speed+=10
     else:
         snake_body.pop()
-         
+    if snake_position[0] != fruit_position[0] and snake_position[1] != fruit_position[1] :
+        food_timer += 1
+        if food_timer == 20:
+            fruit_spawn = 0
+     
     if not fruit_spawn:
         fruit_position = [random.randrange(1, (WIDTH//10)) * 10, random.randrange(1, (HEIGHT//10)) * 10]
          
     fruit_spawn = True
     game_window.fill(black)
-    if food_timer > 5:
-        food_position = [random.randrange(1, (WIDTH//10)) * 10, random.randrange(1, (HEIGHT//10)) * 10]
-        food_spawn = True
-        food_timer = 0
+
+    food_timer+=1
+
+    if food_timer == 20:
+        food_timer
 
      
     for pos in snake_body:

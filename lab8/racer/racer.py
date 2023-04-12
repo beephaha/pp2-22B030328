@@ -42,14 +42,16 @@ DISPLAYSURF = pygame.display.set_mode((400, 600))
 DISPLAYSURF.fill(WHITE)
 pygame.display.set_caption("car racer")
 
+
 #coin
 class Coin(pygame.sprite.Sprite):
       def __init__(self):
         super().__init__()
         self.image = pygame.image.load("lab8/racer/coin.png")
         self.image = pygame.transform.scale(self.image, (30, 30))
-        self.rect = self.image.get_rect()
+        self.rect =self.image.get_rect()
         self.rect.center = (random.randint(40, SCREEN_WIDTH-40), 0)
+
 
       def move(self):
         global SCORE
@@ -74,6 +76,8 @@ class Enemy(pygame.sprite.Sprite):
             SCORE += 1
             self.rect.top = 0
             self.rect.center = (random.randint(40, SCREEN_WIDTH - 40), 0)
+        if coin_scores % 2 == 0:
+            SPEED += 0.25
 
 #player
 class Player(pygame.sprite.Sprite):
@@ -143,9 +147,8 @@ while True:
             COIN_SCORE += 1
             entity.rect.top = 0
             entity.rect.center = (random.randint(40, SCREEN_WIDTH - 40), 0)
-    #increasing the speed when N money is earned
-    if COIN_SCORE % 2 == 0:
-        SPEED += 0.05
+            entity.image = pygame.transform.scale(entity.image, (random.randint(30, 70), 30))
+
 
     #collides with a car
     if pygame.sprite.spritecollideany(P1, enemies):
