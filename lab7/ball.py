@@ -44,7 +44,7 @@ while True:
             elif circle_y > 500 - circle_radius:
                 circle_y = 500 - circle_radius
 
-            # обнавление после движения
+            # обновление после движения
             screen.fill(white)
             pygame.draw.circle(screen, black, (circle_x, circle_y), circle_radius)
             pygame.display.update()

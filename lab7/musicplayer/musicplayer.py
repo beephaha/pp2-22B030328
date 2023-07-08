@@ -9,7 +9,7 @@ pygame.display.set_caption("Music Player")
 font = pygame.font.Font(None, 36)
 
 # set up music list and current index
-music_list = [r"C:\Users\beiba\OneDrive\Документы\GitHub\pp2-22B030328\pp2-22B030328\lab7\musicplayer\songs\kayrat-nurtas-ol-sen-emes.mp3"]
+music_list = [r"lab8/musicplayer/songs/kayrat-nurtas-ol-sen-emes.mp3"]
 current_index = 0
 
 # set up player and controller
